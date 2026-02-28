@@ -1,0 +1,23 @@
+---
+layout: "wrapper"
+author: "John Doe"
+---
+
+<!-- {% if page.title == "Welcome to Jekyll!" %}
+    this is the first post
+    {% elsif page.title == "My Second Post" %}
+    this is the second post
+    {% else %}
+    this is some other post
+{% endif %} -->
+
+
+{% for post in site.posts %}
+<li><a style="{% if page.url == post.url %}color:red; {%endif%}" href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+
+<h2>{{page.title}}</h2>
+<h3>{{layout.author}}</h3>
+    <hr>
+
+    {{ content }}
